@@ -10,6 +10,8 @@ import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
@@ -32,11 +34,20 @@ public class Allocation {
 	@Column(nullable = false)
 	private Date end;
 	
-	@Column(nullable = false)
+	@Column(name = "Course_id",nullable = false)
 	private Long courseId;
 	
-	@Column(nullable = false)
+	@ManyToOne
+	@JoinColumn(name = "Course_id", nullable = false, insertable = false, updatable = false)
+	private Course course;
+
+	
+	@Column(name = "Professor_id",nullable = false)
 	private Long professorId;
+	
+	@ManyToOne
+	@JoinColumn(name = "Professor_id", nullable = false, insertable = false, updatable = false)
+	private Professor professor;
 	
 	
 
