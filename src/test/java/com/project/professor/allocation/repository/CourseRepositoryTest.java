@@ -1,6 +1,7 @@
 package com.project.professor.allocation.repository;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -28,5 +29,39 @@ public class CourseRepositoryTest {
 		System.out.println(listCourse);		
 	}
 	
+	@Test
+	public void FindyById() {
+		Optional<Course> findId = courseRepository.findById(8l);
+		System.out.println(findId.orElse(null));
+		
+		
+	}
 	
+	@Test
+	public void delete() {
+		courseRepository.deleteById(1l);
+		
+	}
+	
+	@Test
+	public void deleteAll() {
+		courseRepository.deleteAllInBatch();
+}
+	
+	@Test
+	public void create() {
+		Course course = new Course();
+		course.setName("espanhol");
+        courseRepository.save(course);
+	
+	}
+	
+	@Test
+	public void update() {
+		Course course = new Course();
+		course.setName("espanhol");
+		course.setId(4l);
+		courseRepository.save(course);
+		
+	}
 }

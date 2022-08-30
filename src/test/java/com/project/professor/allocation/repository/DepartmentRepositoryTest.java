@@ -31,7 +31,7 @@ public class DepartmentRepositoryTest {
 	}
 	
 	@Test
-	public void mamute() {
+	public void findById() {
 		Optional<Department> acheid =  departmentRepository.findById(2l);
 	    System.out.println(acheid.orElse(null));
 	}

@@ -1,5 +1,6 @@
 package com.project.professor.allocation.repository;
 
+import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.jdbc.AutoConfigureTestDatabase;
 import org.springframework.boot.test.autoconfigure.jdbc.AutoConfigureTestDatabase.Replace;
@@ -16,4 +17,9 @@ public class ProfessorRepositoryTest {
 
 	@Autowired
 	ProfessorRepository professorRepository;
+	
+	@Test
+	public void findAll() {
+
+	}
 }
